@@ -12,6 +12,7 @@
 \bmdefine{\bmx}{x}
 \bmdefine{\bmA}{A}
 \bmdefine{\bma}{a}
+\bmdefine{\bmy}{y}
 
 %%% Destinguished symbols
 \def\R{{\mathbb{R}}}
@@ -65,9 +66,29 @@ a_N^\top & \cdots & a_{N, M}
 \end{array}\right].
 \end{align*}
 
+\section{Derivative}
+\subsection{Random Vector}
+\begin{equation}
+\nabla_{\bmx} \bmy = [\frac{\partial \bmy}{\partial x_1}, \ldots, \frac{\partial \bmy}{\partial x_N}]
+\label{eq:Derivative-random_vector}
+\end{equation}
+
+\section{Determinant Operator}
+\subsection{Random Properties}
+For scalar $c$ and $N\times N$ identity matrix $I$,
+\[ \det(cI) = c^N. \]
 
 \section{Trace Operator}
-\subsection{Derivative}
+\subsection{Derivatives}
+\subsubsection{$d(\Trace(\bmx \bmx^\top \bmA)) / d\bmx$}
+\begin{align*}
+d(\Trace(\bmx \bmx^\top \bmA)) / d\bmx &= \frac{d}{d \bmx} \sum_{i}^{N} \sum_{k}^{N} x_i x_k a_{ik}.
+\end{align*}
+Consider
+\begin{align*}
+\frac{d}{d x_j} \sum_{i}^{N} \sum_{k}^{N} x_i x_k a_{ik} & = x_1a_{j,1} + x_2a_{j,2} + \cdots \frac{d}{d x_j} \sum_{k}^{N} x_j x_k a_{jk} + \cdots x_N a_{j, N}
+\end{align*}
+
 \subsection{Relation to Determinant}
 
 
