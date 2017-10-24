@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+
+\usepackage[textwidth=6.5in, textheight=9.5in]{geometry}
+
+\usepackage{amsfonts}
+\usepackage{amssymb,amsmath, amsthm}
+\usepackage{siunitx}
+\usepackage{url, graphicx}
+\usepackage{xspace}
+
+\usepackage{bm} % Define common bold symbols with \bmdefine{cmd}{def}. Use \bm{var} ad hoc in text
+\bmdefine{\bmx}{x}
+\bmdefine{\bmA}{A}
+\bmdefine{\bma}{a}
+
+%%% Destinguished symbols
+\def\R{{\mathbb{R}}}
+\def\Given{{\,|\,}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+\def\iid{{\stackrel{\text{iid}}{\sim}}}
+\def\Ind{{\stackrel{\text{ind}}{\sim}}}
+\DeclareMathOperator{\Trace}{tr}
+
+%%% Math operator shortcuts
+\newcommand*{\Inner}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand*{\Prox}[2]{\operatorname{prox}_{#1}(#2)}
+\newcommand*{\fracbig}[2]{\left( \frac{#1}{#2} \right)}
+
+%%% Other special abreviation defs
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\roman{subsubsection}}
+
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\usepackage{cleveref} % Needs to be last
+
+%opening
+\title{ML \& LinAlg Math Cheat Sheet}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Notation}
+Vectors are column vectors denoted by lower-case bolded variables, such that 
+\[\bmx = \left[ \begin{split}
+x_1 \\ \vdots \\ x_N 
+\end{split} \right]. \]
+A row vector is denoted $\bmx^\top = [x_1 \ldots x_N]$.
+A matrix is indicated by a bolded upper-case variable, such that an $N \times M$ matrix is
+\begin{align*}
+\bmA = \{a_{ij}\} = [\bma_1 \cdots \bma_M ] =
+\left[\begin{array}{c}
+\bma_1^\top \\
+\vdots \\
+\bma_N^\top
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+a_{1,1}^\top & \cdots & a_{1, M} \\
+\vdots & \ddots & \vdots \\
+a_N^\top & \cdots & a_{N, M}
+\end{array}\right].
+\end{align*}
+
+
+\section{Trace Operator}
+\subsection{Derivative}
+\subsection{Relation to Determinant}
+
+
+
+\end{document}
