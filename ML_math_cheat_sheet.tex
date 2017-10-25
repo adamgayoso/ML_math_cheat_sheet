@@ -13,12 +13,14 @@
 \bmdefine{\bmA}{A}
 \bmdefine{\bma}{a}
 \bmdefine{\bmy}{y}
+\bmdefine{\bmB}{B}
 
 %%% Destinguished symbols
 \def\R{{\mathbb{R}}}
 \def\Given{{\,|\,}}
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{Var}
+\def\Def{{\stackrel{\text{def}}{=}}}
 \def\iid{{\stackrel{\text{iid}}{\sim}}}
 \def\Ind{{\stackrel{\text{ind}}{\sim}}}
 \DeclareMathOperator{\Trace}{tr}
@@ -79,7 +81,22 @@ For scalar $c$ and $N\times N$ identity matrix $I$,
 \[ \det(cI) = c^N. \]
 
 \section{Trace Operator}
+Defined for $N \times N$ square matrix $\bmA$ as
+\begin{equation}
+\Trace(\bmA) \Def \sum_{i}^{N} a_{ii}
+\label{eq:Definition-Trace}
+\end{equation}
+
+\subsection{Properties}
+
+\subsubsection{$\Trace(c\bmA + d\bmB) = c\Trace(\bmA) + d\Trace(\bmB)$}
+For scalars $c$ and $d$, square matrices $\bmA$ and $\bmB$.
+
+\subsubsection{$\Trace(\bmA\bmB) = \Trace(\bmB\bmA) = \Trace(\bmA^\top\bmB) = \Trace(\bmA\bmB^\top) = \sum_{i,j} a_{ij}b_{ij}$}
+And clearly, also $\Trace(\bmB^\top\bmA) = \Trace(\bmB\bmA^\top) = \sum_{i,j} a_{ij}b_{ij} = \Trace(\bmA\bmB)$.
+
 \subsection{Derivatives}
+
 \subsubsection{$\nabla_{\bmx}\Trace(\bmx \bmx^\top \bmA) = \bmx^\top (\bmA + \bmA^\top)$}
 \label{sec:Trace-Derivative-tr(xx'A)}
 For square matrix $\bmA$.
