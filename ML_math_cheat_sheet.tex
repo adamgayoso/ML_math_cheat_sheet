@@ -14,12 +14,15 @@
 \bmdefine{\bma}{a}
 \bmdefine{\bmy}{y}
 \bmdefine{\bmB}{B}
+\bmdefine{\bmmu}{\mu}
+\bmdefine{\bmSigma}{\Sigma}
 
 %%% Destinguished symbols
 \def\R{{\mathbb{R}}}
 \def\Given{{\,|\,}}
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{cov}
 \def\Def{{\stackrel{\text{def}}{=}}}
 \def\iid{{\stackrel{\text{iid}}{\sim}}}
 \def\Ind{{\stackrel{\text{ind}}{\sim}}}
@@ -68,6 +71,8 @@ a_N^\top & \cdots & a_{N, M}
 \end{array}\right].
 \end{align*}
 
+For some random variable $x$, let $\E[x]$ denote its expected value.
+
 \section{Derivative}
 \subsection{Vector Gradient}
 \begin{equation}
@@ -105,6 +110,16 @@ Note that $\bmx^\top (\bmA + \bmA^\top) = 2\bmx^\top \bmA$ for symmetric $\bmA$.
 See \cref{proof:Trace-Derivative-tr(xx'A)} for proof.
 
 \subsection{Relation to Determinant}
+
+
+\section{Expected Values}
+For $\bmx \in \R^d$, with expected value $\E[\bmx] = \bmmu$ and covariance matrix $ \bmSigma = \E[(\bmx - \E[\bmx]) (\bmx - \E[\bmx])^\top]$,
+\begin{align}
+\E[x_i^2] &= \Sigma_{i,i} + \mu_i^2
+\\
+\E_{x} \left[ (y - \bmx\top \bm{w})^2 \right]
+&= (y - \bm{w}^\top \bmmu)^2 + \bm{w}^\top \bmSigma \bm{w}.
+\end{align}
 
 \appendix
 \section{Proofs}
