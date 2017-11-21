@@ -98,7 +98,15 @@ Defined for $N \times N$ square matrix $\bmA$ as
 For scalars $c$ and $d$, square matrices $\bmA$ and $\bmB$.
 
 \subsubsection{$\Trace(\bmA\bmB) = \Trace(\bmB\bmA) = \Trace(\bmA^\top\bmB) = \Trace(\bmA\bmB^\top) = \sum_{i,j} a_{ij}b_{ij}$}
+\label{sec:trace-communitivity}
 And clearly, also $\Trace(\bmB^\top\bmA) = \Trace(\bmB\bmA^\top) = \sum_{i,j} a_{ij}b_{ij} = \Trace(\bmA\bmB)$.
+
+\subsubsection{$\bmx^\top \bmA \bmx = \Trace(\bmA \bmx \bmx^\top)$}
+This can be seen from
+\[\bmx^\top \bmA \bmx = \left[\begin{array}{ccc}
+\sum\limits_{i=1}^N x_i a_{i, 1} & \cdots & \sum\limits_{i=1}^N x_i a_{i, N}
+\end{array}\right] \bmx = \sum_{j=1}^{N} x_j \sum_{i=1}^N x_i a_{i, j} = \sum_{j=1}^{N} \sum_{i=1}^N a_{i, j} (\bmx \bmx^\top)_{i,j} = \Trace(\bmA \bmx \bmx^\top). \]
+The last equality follows from \cref{sec:trace-communitivity}. %, which also implies $\bmx^\top \bmA \bmx = \Trace(\bmx \bmx^\top \bmA)$.
 
 \subsection{Derivatives}
 
