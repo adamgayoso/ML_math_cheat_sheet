@@ -1,12 +1,17 @@
 \documentclass[11pt]{article}
 
-\usepackage[textwidth=6.5in, textheight=9.5in]{geometry}
+\usepackage[textwidth=7in, textheight=10in]{geometry}
 
 \usepackage{amsfonts}
 \usepackage{amssymb,amsmath, amsthm}
 \usepackage{siunitx}
 \usepackage{url, graphicx}
 \usepackage{xspace}
+
+\usepackage{xcolor}
+\usepackage{soul}
+\newcommand{\NotDone}[1]{%
+	\sethlcolor{blue}\hl{#1}\sethlcolor{yellow}}
 
 \usepackage{bm} % Define common bold symbols with \bmdefine{cmd}{def}. Use \bm{var} ad hoc in text
 \bmdefine{\bmx}{x}
@@ -49,6 +54,7 @@
 \maketitle
 \tableofcontents
 
+\pagebreak
 \section{Notation}
 Vectors are column vectors denoted by lower-case bolded variables, such that 
 \[\bmx = \left[ \begin{split}
@@ -73,17 +79,34 @@ a_N^\top & \cdots & a_{N, M}
 
 For some random variable $x$, let $\E[x]$ denote its expected value.
 
+
+
+
+
 \section{Derivative}
 \subsection{Vector Gradient}
 \begin{equation}
-\nabla_{\bmx} \bmy = [\frac{\partial \bmy}{\partial x_1}, \ldots, \frac{\partial \bmy}{\partial x_N}]
+\nabla_{\bmx} \bmy =
+\left[
+	\frac{\partial \bmy}{\partial x_1}, \ldots, \frac{\partial \bmy}{\partial x_N}
+\right]
 \label{eq:Derivative-random_vector}
 \end{equation}
 
+
+
+
+
+
 \section{Determinant Operator}
-\subsection{Random Properties}
+\subsection{Determinant Properties}
 For scalar $c$ and $N\times N$ identity matrix $I$,
 \[ \det(cI) = c^N. \]
+
+
+
+
+
 
 \section{Trace Operator}
 Defined for $N \times N$ square matrix $\bmA$ as
@@ -92,7 +115,7 @@ Defined for $N \times N$ square matrix $\bmA$ as
 \label{eq:Definition-Trace}
 \end{equation}
 
-\subsection{Properties}
+\subsection{Trace Properties}
 
 \subsubsection{$\Trace(c\bmA + d\bmB) = c\Trace(\bmA) + d\Trace(\bmB)$}
 For scalars $c$ and $d$, square matrices $\bmA$ and $\bmB$.
@@ -108,7 +131,7 @@ This can be seen from
 \end{array}\right] \bmx = \sum_{j=1}^{N} x_j \sum_{i=1}^N x_i a_{i, j} = \sum_{j=1}^{N} \sum_{i=1}^N a_{i, j} (\bmx \bmx^\top)_{i,j} = \Trace(\bmA \bmx \bmx^\top). \]
 The last equality follows from \cref{sec:trace-communitivity}. %, which also implies $\bmx^\top \bmA \bmx = \Trace(\bmx \bmx^\top \bmA)$.
 
-\subsection{Derivatives}
+\subsection{Trace Derivatives}
 
 \subsubsection{$\nabla_{\bmx}\Trace(\bmx \bmx^\top \bmA) = \bmx^\top (\bmA + \bmA^\top)$}
 \label{sec:Trace-Derivative-tr(xx'A)}
@@ -117,7 +140,9 @@ Note that $\bmx^\top (\bmA + \bmA^\top) = 2\bmx^\top \bmA$ for symmetric $\bmA$.
 
 See \cref{proof:Trace-Derivative-tr(xx'A)} for proof.
 
-\subsection{Relation to Determinant}
+
+\subsection{Trace Relation to Determinant}
+\NotDone{TBD}
 
 
 \section{Expected Values}
